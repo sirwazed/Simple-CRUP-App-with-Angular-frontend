@@ -1,0 +1,22 @@
+<div class="form-style-6">
+  <h1>Welcome To Simple Crud App of Recipes</h1>
+  <form>
+    <label for="">Recipe No:</label>
+    <input [value]="tempObj.recipeId" type="text" name="" id="" #rId><br><br>
+    <label for="">Ingredients:</label>
+    <input [value]="tempObj.ingredients" type="text" name="kjaj" id="" #ing> <br><br>
+    <label for="">Instructions:</label> 
+    <input [value]="tempObj.instruction" type="text" #ins><br> <br>
+    <input type="submit" value="Save" (click)="addRecipe(rId.value, ing.value, ins.value)"/>
+    <input type="submit" value="Update" (click)="updateRecipe(rId.value, ing.value, ins.value)"/>
+    <input type="submit" value="Delete" (click)="deleteRecipe()"/>
+    <input type="submit" value="Clear" (click)="clearForm()"/><br><br>
+    <input type="submit" value="Get All Data" (click)="getAllRecipe()"/>
+  </form>
+</div>
+
+<div class="gallery" *ngFor="let item of data, let i=index">
+  <p (click)="showElementOnForm($event)">{{item.recipeId}}</p>
+  <p>{{item.ingredients}}</p>
+  <p>{{item.instruction}}</p>
+</div>
